@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank2CSV — Convert Bank Statement PDFs to CSV/Excel. Nothing Gets Uploaded.</title>
+    <meta
+      name="description"
+      content="Convert bank and credit card statement PDFs to clean CSV or Excel files entirely in your browser. Your financial data never leaves your device. $29 once — no subscription."
+    />
+    <link rel="canonical" href="https://bank2csv.app/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <!-- TODO before launch: add the Cloudflare Web Analytics beacon snippet here
+         and keep static.cloudflareinsights.com in public/_headers CSP. -->
+    <link rel="stylesheet" crossorigin href="/bank2csv-site/assets/main-DcjD-ZVK.css">
+  </head>
+  <body class="bg-white text-slate-900">
+    <header class="border-b border-slate-200">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="./" class="flex items-center gap-2">
+          <span class="flex h-7 w-7 items-center justify-center rounded-md bg-emerald-700 font-bold text-white">B</span>
+          <span class="text-lg font-semibold">Bank2CSV</span>
+        </a>
+        <nav class="flex items-center gap-6 text-sm">
+          <a href="#banks" class="hidden text-slate-600 hover:text-slate-900 sm:inline">Banks</a>
+          <a href="#pricing" class="hidden text-slate-600 hover:text-slate-900 sm:inline">Pricing</a>
+          <a href="#faq" class="hidden text-slate-600 hover:text-slate-900 sm:inline">FAQ</a>
+          <a href="./app.html" class="rounded-md bg-emerald-700 px-4 py-2 font-medium text-white hover:bg-emerald-600">Convert a statement</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="mx-auto max-w-3xl px-4 pb-16 pt-20 text-center">
+        <p class="mb-4 inline-block rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700">
+          Your statement never leaves your device — verify it yourself
+        </p>
+        <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">
+          Bank statement PDF &rarr; clean CSV or Excel.<br />
+          <span class="text-emerald-600">Without uploading it anywhere.</span>
+        </h1>
+        <p class="mx-auto mt-5 max-w-2xl text-lg text-slate-600">
+          Every other converter uploads your financial data to their servers and charges a monthly
+          subscription. Bank2CSV parses the PDF <strong>in your browser</strong> and costs
+          <strong>$29 once</strong>. Balances are re-computed line by line so you know the numbers reconcile.
+        </p>
+        <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="./app.html" class="rounded-lg bg-emerald-700 px-6 py-3 text-lg font-semibold text-white hover:bg-emerald-600">
+            Convert a statement — free preview
+          </a>
+          <a href="#privacy" class="px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-900">
+            How can I trust this? &darr;
+          </a>
+        </div>
+        <p class="mt-4 text-sm text-slate-500">No signup. No upload. Free preview of every conversion.</p>
+      </section>
+
+      <!-- How it works -->
+      <section class="border-t border-slate-100 bg-slate-50 py-16">
+        <div class="mx-auto max-w-5xl px-4">
+          <h2 class="text-center text-3xl font-bold">How it works</h2>
+          <div class="mt-10 grid gap-8 sm:grid-cols-3">
+            <div class="rounded-xl bg-white p-6 shadow-sm">
+              <div class="text-2xl">1&#65039;&#8419;</div>
+              <h3 class="mt-3 font-semibold">Drop your PDF</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Drag one statement or a whole folder's worth into the app. The files are read locally by
+                JavaScript running on your machine.
+              </p>
+            </div>
+            <div class="rounded-xl bg-white p-6 shadow-sm">
+              <div class="text-2xl">2&#65039;&#8419;</div>
+              <h3 class="mt-3 font-semibold">We reconcile every balance</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                The parser re-computes the running balance for every transaction and flags any row that
+                doesn't add up — so you never import silently wrong numbers.
+              </p>
+            </div>
+            <div class="rounded-xl bg-white p-6 shadow-sm">
+              <div class="text-2xl">3&#65039;&#8419;</div>
+              <h3 class="mt-3 font-semibold">Export CSV or Excel</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Download per-statement CSV/XLSX, or combine a year of statements into a single workbook,
+                ready for Excel, Google Sheets, or QuickBooks import.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy prove-it -->
+      <section id="privacy" class="py-16">
+        <div class="mx-auto max-w-3xl px-4">
+          <h2 class="text-3xl font-bold">Don't trust us — check the Network tab</h2>
+          <p class="mt-4 text-slate-600">
+            "We take your privacy seriously" is what every site says. Here's something better: proof.
+            Bank2CSV is a static page with no backend. The conversion is done by
+            <a class="text-emerald-700 underline" href="https://mozilla.github.io/pdf.js/" rel="noreferrer">pdf.js</a>
+            running in a Web Worker on your device.
+          </p>
+          <ol class="mt-6 list-decimal space-y-2 pl-6 text-slate-700">
+            <li>Open the app and press <kbd class="rounded bg-slate-100 px-1.5 py-0.5 text-sm">F12</kbd> (DevTools) &rarr; <strong>Network</strong> tab.</li>
+            <li>Drop in a bank statement and export the CSV.</li>
+            <li>Watch the Network tab: <strong>zero requests</strong>. Your statement stayed on your machine.</li>
+          </ol>
+          <p class="mt-6 text-slate-600">
+            You can even load the app, <strong>disconnect from the internet</strong>, and convert offline.
+            The only request the app ever makes is a license check when you activate Pro — never your files.
+          </p>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing" class="border-t border-slate-100 bg-slate-50 py-16">
+        <div class="mx-auto max-w-4xl px-4">
+          <h2 class="text-center text-3xl font-bold">One price. Not one price per month.</h2>
+          <p class="mt-3 text-center text-slate-600">
+            Incumbent converters charge $25–159 <em>per month</em> to upload your statements to their servers.
+          </p>
+          <div class="mt-10 grid gap-6 sm:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 bg-white p-8">
+              <h3 class="text-lg font-semibold">Free</h3>
+              <p class="mt-1 text-3xl font-bold">$0</p>
+              <ul class="mt-6 space-y-2 text-sm text-slate-600">
+                <li>&#10003; Convert &amp; preview any statement</li>
+                <li>&#10003; Full balance reconciliation report</li>
+                <li>&#10003; Copy up to 20 rows as CSV</li>
+                <li>&#10003; Coordinate debug view</li>
+              </ul>
+              <a href="./app.html" class="mt-8 block rounded-md border border-slate-300 py-2.5 text-center font-medium hover:bg-slate-50">Start converting</a>
+            </div>
+            <div class="relative rounded-2xl border-2 border-emerald-600 bg-white p-8">
+              <span class="absolute -top-3 left-6 rounded-full bg-emerald-700 px-3 py-0.5 text-xs font-semibold text-white">LIFETIME</span>
+              <h3 class="text-lg font-semibold">Pro</h3>
+              <p class="mt-1 text-3xl font-bold">$29 <span class="text-base font-normal text-slate-500">once, forever</span></p>
+              <ul class="mt-6 space-y-2 text-sm text-slate-600">
+                <li>&#10003; Everything in Free</li>
+                <li>&#10003; Unlimited CSV &amp; Excel downloads</li>
+                <li>&#10003; Batch convert many statements at once</li>
+                <li>&#10003; Combine months into one workbook</li>
+                <li>&#10003; All future bank profiles included</li>
+              </ul>
+              <a href="./app.html" class="mt-8 block rounded-md bg-emerald-700 py-2.5 text-center font-medium text-white hover:bg-emerald-600">Unlock Pro in the app</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Supported banks -->
+      <section id="banks" class="py-16">
+        <div class="mx-auto max-w-4xl px-4 text-center">
+          <h2 class="text-3xl font-bold">Supported banks</h2>
+          <p class="mt-3 text-slate-600">
+            Dedicated parsers for the big five, plus a generic parser that handles most other text-based
+            statements. Missing your bank?
+            <a class="text-emerald-700 underline" href="mailto:support@bank2csv.app?subject=Bank%20request">Send a redacted sample</a>
+            — new profiles usually ship within days.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="./banks/chase.html" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium hover:border-emerald-500 hover:text-emerald-700">Chase</a>
+            <a href="./banks/bank-of-america.html" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium hover:border-emerald-500 hover:text-emerald-700">Bank of America</a>
+            <a href="./banks/wells-fargo.html" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium hover:border-emerald-500 hover:text-emerald-700">Wells Fargo</a>
+            <a href="./banks/citi.html" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium hover:border-emerald-500 hover:text-emerald-700">Citi</a>
+            <a href="./banks/capital-one.html" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium hover:border-emerald-500 hover:text-emerald-700">Capital One</a>
+            <a href="./app.html" class="rounded-full border border-dashed border-slate-300 px-4 py-2 text-sm font-medium text-slate-500 hover:border-emerald-500 hover:text-emerald-700">Any other bank &rarr; generic parser</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="border-t border-slate-100 bg-slate-50 py-16">
+        <div class="mx-auto max-w-3xl px-4">
+          <h2 class="text-center text-3xl font-bold">Frequently asked questions</h2>
+          <div class="mt-8 space-y-3">
+            <details class="rounded-lg bg-white p-5 shadow-sm">
+              <summary class="cursor-pointer font-semibold">Is my bank statement really never uploaded?</summary>
+              <p class="mt-3 text-sm text-slate-600">
+                Really. The site is static — there is no server to upload to. Parsing happens in a Web Worker
+                on your device using pdf.js. Open DevTools &rarr; Network while converting and you'll see zero
+                requests. You can even convert with Wi-Fi turned off.
+              </p>
+            </details>
+            <details class="rounded-lg bg-white p-5 shadow-sm">
+              <summary class="cursor-pointer font-semibold">How do I know the extracted numbers are correct?</summary>
+              <p class="mt-3 text-sm text-slate-600">
+                Bank2CSV re-computes the running balance across every transaction and compares it to the
+                balances printed on your statement. Each row gets a green check when it reconciles, and the
+                file gets a confidence score. If something doesn't add up, it's flagged in red instead of
+                silently exported.
+              </p>
+            </details>
+            <details class="rounded-lg bg-white p-5 shadow-sm">
+              <summary class="cursor-pointer font-semibold">Do scanned statements work?</summary>
+              <p class="mt-3 text-sm text-slate-600">
+                Not yet. Bank2CSV needs a text layer in the PDF (statements downloaded from your bank's
+                website always have one). OCR for scanned or photographed statements is on the roadmap.
+              </p>
+            </details>
+            <details class="rounded-lg bg-white p-5 shadow-sm">
+              <summary class="cursor-pointer font-semibold">Which formats can I export?</summary>
+              <p class="mt-3 text-sm text-slate-600">
+                CSV (opens in anything, imports into QuickBooks) and XLSX (Excel, Numbers, Google Sheets).
+                Pro can also merge many statements into one workbook — one sheet per statement plus a
+                combined, date-sorted sheet. QBO/OFX export is planned.
+              </p>
+            </details>
+            <details class="rounded-lg bg-white p-5 shadow-sm">
+              <summary class="cursor-pointer font-semibold">What does "lifetime" mean for $29?</summary>
+              <p class="mt-3 text-sm text-slate-600">
+                You pay once and the license is yours permanently, including all future bank profiles and
+                features in this product. It's not a trial and there is no renewal — we can afford that
+                because there are no servers processing your files.
+              </p>
+            </details>
+            <details class="rounded-lg bg-white p-5 shadow-sm">
+              <summary class="cursor-pointer font-semibold">My bank isn't parsed correctly. What do I do?</summary>
+              <p class="mt-3 text-sm text-slate-600">
+                Email a <strong>redacted</strong> sample (block out names/account numbers — the layout is what
+                matters) to <a class="text-emerald-700 underline" href="mailto:support@bank2csv.app">support@bank2csv.app</a>.
+                Bank profiles are declarative, so new formats usually ship within a few days.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 py-8">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-sm text-slate-500 sm:flex-row">
+        <p>&copy; 2026 Bank2CSV. Your statements stay on your device.</p>
+        <nav class="flex gap-4">
+          <a href="./banks/chase.html" class="hover:text-slate-900">Chase</a>
+          <a href="./banks/bank-of-america.html" class="hover:text-slate-900">Bank of America</a>
+          <a href="./banks/wells-fargo.html" class="hover:text-slate-900">Wells Fargo</a>
+          <a href="./banks/citi.html" class="hover:text-slate-900">Citi</a>
+          <a href="./banks/capital-one.html" class="hover:text-slate-900">Capital One</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
